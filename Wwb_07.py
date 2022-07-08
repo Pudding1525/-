@@ -55,5 +55,6 @@ with open("ptt八卦版詳細資訊.txt", "w", encoding="utf-8") as file:
     for page in range(page_num):
         html_text, tmp = sent_req(url)
         parse_data(tmp)
+        print(html_text.prettify())
         next_link = html_text.find("a", text="‹ 上頁").get("href")
         url = domain_name+next_link
